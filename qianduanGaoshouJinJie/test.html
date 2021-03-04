@@ -1,8 +1,8 @@
 <!--
  * @Date         : 2021-03-04 11:49:25
  * @LastEditors  : cxx
- * @LastEditTime : 2021-03-04 12:01:42
- * @FilePath     : \qianduanGaoshouJinJie\js\test.html
+ * @LastEditTime : 2021-03-04 16:02:53
+ * @FilePath     : \qianduanGaoshouJinJie\test.html
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -16,44 +16,37 @@
 
 <body>
     <script>
-        function clone(data) {
-            const map = new WeakMap();
-            const deep = (data) => {
-                const result = {};
-                const keys = [...Object.getOwnPropertyNames(data), ...Object.getOwnPropertySymbols(data)];
+        function Stack() {
+            var _stack = [];
 
-                const isExisted = map.get(data);
-
-                if (isExisted) {
-                    return isExisted;
-                }
-
-                map.set(data, result);
-
-                keys.forEach(key => {
-                    const item = data[key];
-
-                    if (typeof item === 'object' && item) {
-                        result[key] = deep(item);
-                    } else {
-                        result[key] = item;
-                    }
-                })
-
-                return result;
-
+            this.push = function (element) {
+                _stack.push(element);
             }
 
-            return deep(data);
+            this.pop = function () {
+                return _stack.pop();
+            }
+
+            this.top = function () {
+                return _stack[_stack.length - 1];
+            }
+
+            this.isEmpty = function () {
+                return _stack.length === 0;
+            }
+
+            this.size = function () {
+                return _stack.length;
+            }
+
+            this.clear = function () {
+                _stack = [];
+            }
         }
 
-        const a = {
-            data: 1,
-        }
 
-        const b = clone(a);
 
-        console.info('b', b);
+
 
     </script>
 </body>
