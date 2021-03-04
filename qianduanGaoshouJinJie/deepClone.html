@@ -1,0 +1,62 @@
+<!--
+ * @Date         : 2021-03-04 11:49:25
+ * @LastEditors  : cxx
+ * @LastEditTime : 2021-03-04 11:53:19
+ * @FilePath     : \qianduanGaoshouJinJie\deepClone.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function clone(obj) {
+            let map = new WeakMap();
+
+            function deep(data) {
+                let result = {};
+
+                const keys = [...Object.getOwnPropertyNames(data), ...Object.getOwnPropertySymbols(data)];
+
+                if (!keys.length) return data;
+
+                const exist = map.get(data);
+
+                if (exist) return exist;
+
+                map.set(data, result);
+
+                keys.forEach(key => {
+                    let item = data[key];
+
+                    if (typeof item === 'object' && item) {
+                        result[key] = deep(item);
+                    } else {
+                        result[key] = item;
+                    }
+
+                })
+
+                return result;
+            }
+            return deep(obj)
+        }
+
+
+        const a = {
+            data: 11,
+        }
+        const b = clone(a);
+
+        console.info('b', b)
+
+    </script>
+</body>
+
+</html>

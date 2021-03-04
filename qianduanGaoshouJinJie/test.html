@@ -1,0 +1,61 @@
+<!--
+ * @Date         : 2021-03-04 11:49:25
+ * @LastEditors  : cxx
+ * @LastEditTime : 2021-03-04 12:01:42
+ * @FilePath     : \qianduanGaoshouJinJie\js\test.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function clone(data) {
+            const map = new WeakMap();
+            const deep = (data) => {
+                const result = {};
+                const keys = [...Object.getOwnPropertyNames(data), ...Object.getOwnPropertySymbols(data)];
+
+                const isExisted = map.get(data);
+
+                if (isExisted) {
+                    return isExisted;
+                }
+
+                map.set(data, result);
+
+                keys.forEach(key => {
+                    const item = data[key];
+
+                    if (typeof item === 'object' && item) {
+                        result[key] = deep(item);
+                    } else {
+                        result[key] = item;
+                    }
+                })
+
+                return result;
+
+            }
+
+            return deep(data);
+        }
+
+        const a = {
+            data: 1,
+        }
+
+        const b = clone(a);
+
+        console.info('b', b);
+
+    </script>
+</body>
+
+</html>
