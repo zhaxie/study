@@ -1,12 +1,16 @@
 /*
  * @Date         : 2021-03-05 15:36:05
  * @LastEditors  : cxx
- * @LastEditTime : 2021-03-05 15:39:21
+ * @LastEditTime : 2021-04-07 10:13:29
  * @FilePath     : \qianduanGaoshouJinJie\js\debounce.js
  */
 
 
-// 代码2
+/**
+ * @description: 防抖
+ * @param {*} func 防抖函数
+ * @param {*} wait 等待时长
+ */
 const debounce = (func, wait = 0) => {
     let timeout = null;
     let args;
