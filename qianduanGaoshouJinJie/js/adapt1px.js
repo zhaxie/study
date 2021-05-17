@@ -1,9 +1,10 @@
 /*
  * @Date         : 2021-05-17 12:16:18
  * @LastEditors  : cxx
- * @LastEditTime : 2021-05-17 15:08:15
- * @FilePath     : \test\test_project\src\assets\js\adapt1px.js
+ * @LastEditTime : 2021-05-17 16:18:45
+ * @FilePath     : \qianduanGaoshouJinJie\js\adapt1px.js
  */
+
 let viewport = document.querySelector('meta[name=viewport]')
 let _contentVal;
 
