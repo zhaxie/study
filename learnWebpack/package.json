@@ -1,0 +1,51 @@
+{
+  "name": "learnWebpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": " webpack-dev-server",
+    "dev1": "webpack",
+    "dev2": "webpack-dev-server --webpack webpack.dev.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@webpack-cli/serve": "^1.5.1",
+    "astroturf": "^0.10.5",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "4.3.0",
+    "gh-pages": "^3.2.3",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.11.1",
+    "less-loader": "^7.0.2",
+    "mini-css-extract-plugin": "^2.2.0",
+    "node-sass": "^6.0.1",
+    "postcss": "^8.1.1",
+    "postcss-loader": "^4.0.4",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "sass-loader": "^10.2.0",
+    "style-loader": "1.3.0",
+    "webpack": "4.44.2",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "3.11.1"
+  },
+  "dependencies": {
+    "antd": "^3.26.20",
+    "autoprefixer": "^10.0.1",
+    "classnames": "^2.3.1",
+    "cssnano": "^5.0.7",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^14.0.2",
+    "postcss-preset-env": "^6.7.0",
+    "webpack-merge": "^5.8.0",
+    "zswui": "0.0.49"
+  }
+}
