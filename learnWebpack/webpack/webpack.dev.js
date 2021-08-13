@@ -1,9 +1,8 @@
-
-var merge = require('webpack-merge')
-var base =  require('./webpack.base.js')
+const webpackMerge = require('webpack-merge')
+const base = require('./webpack.base.js')
 
 process.env.NODE_ENV = 'development'
 
-module.exports = merge.merge(base, {
-    mode: 'development',
+module.exports = webpackMerge.merge(base, {
+  mode: 'development',
 })

@@ -1,0 +1,5 @@
+/node_modules/* 
+/src/static/app/js/util/**/*
+/src/static/app/js/route/**/*
+.eslintignore
+/dist/*
